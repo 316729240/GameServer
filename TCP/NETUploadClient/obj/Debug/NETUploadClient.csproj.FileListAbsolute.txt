@@ -23,3 +23,14 @@ C:\Bin\NETUploadClient.exe.manifest
 C:\Bin\NETUploadClient.application
 C:\Bin\NETUploadClient.exe
 C:\Bin\NETUploadClient.pdb
+E:\Bin\NETUploadClient.exe.config
+E:\myproject\麻将窝\GameServer\TCP\NETUploadClient\obj\Debug\NETUploadClient.exe
+E:\myproject\麻将窝\GameServer\TCP\NETUploadClient\obj\Debug\NETUploadClient.pdb
+E:\Bin\NETUploadClient.exe.manifest
+E:\Bin\NETUploadClient.application
+E:\Bin\NETUploadClient.exe
+E:\Bin\NETUploadClient.pdb
+E:\myproject\麻将窝\GameServer\TCP\NETUploadClient\obj\Debug\NETUploadClient.TrustInfo.xml
+E:\myproject\麻将窝\GameServer\TCP\NETUploadClient\obj\Debug\NETUploadClient.exe.manifest
+E:\myproject\麻将窝\GameServer\TCP\NETUploadClient\obj\Debug\NETUploadClient.application
+E:\myproject\麻将窝\GameServer\TCP\NETUploadClient\obj\Debug\NETUploadClient.csprojResolveAssemblyReference.cache

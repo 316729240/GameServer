@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Net.Sockets;
 using AsyncSocketServer;
+using System.Threading;
 
 namespace NETUploadClient.SyncSocketCore
 {
@@ -21,7 +22,7 @@ namespace NETUploadClient.SyncSocketCore
         protected DynamicBufferManager m_recvBuffer; //接收数据的缓存
         protected IncomingDataParser m_incomingDataParser; //收到数据的解析器，用于解析返回的内容
         protected DynamicBufferManager m_sendBuffer; //发送数据的缓存，统一写到内存中，调用一次发送
-
+        public Func<IncomingDataParser, bool> OnRecvData = null;//接收到服务器数据时
         public SyncSocketInvokeElement()
         {
             m_tcpClient = new TcpClient();
@@ -42,6 +43,7 @@ namespace NETUploadClient.SyncSocketCore
             m_tcpClient.Client.Send(socketFlag, SocketFlags.None); //发送标识
             m_host = host;
             m_port = port;
+            ThreadPool.QueueUserWorkItem(RecvData);
         }
 
         public void Disconnect()
@@ -50,7 +52,30 @@ namespace NETUploadClient.SyncSocketCore
             m_tcpClient = new TcpClient();
             //m_tcpClient.Client.
         }
-
+        /// <summary>
+        /// 接收数据处理
+        /// </summary>
+        /// <param name="s"></param>
+        void RecvData(object s)
+        {
+            while (true) {
+                m_recvBuffer.Clear();
+                int count=m_tcpClient.Client.Receive(m_recvBuffer.Buffer, sizeof(int), SocketFlags.None);
+                if (count == 0)return;
+                int packetLength = BitConverter.ToInt32(m_recvBuffer.Buffer, 0); //获取包长度
+                if (NetByteOrder)
+                    packetLength = System.Net.IPAddress.NetworkToHostOrder(packetLength); //把网络字节顺序转为本地字节顺序
+                m_recvBuffer.SetBufferSize(sizeof(int) + packetLength); //保证接收有足够的空间
+                m_tcpClient.Client.Receive(m_recvBuffer.Buffer, sizeof(int), packetLength, SocketFlags.None);
+                int commandLen = BitConverter.ToInt32(m_recvBuffer.Buffer, sizeof(int)); //取出命令长度
+                string tmpStr = Encoding.UTF8.GetString(m_recvBuffer.Buffer, sizeof(int) + sizeof(int), commandLen);
+                IncomingDataParser comm = new IncomingDataParser();
+                if (comm.DecodeProtocolText(tmpStr))
+                {
+                    if (OnRecvData != null) OnRecvData(comm);
+                }
+            }
+        }
         public void SendCommand()
         {
             string commandText = m_outgoingDataAssembler.GetProtocolText();

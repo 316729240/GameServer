@@ -44,7 +44,8 @@ namespace AsyncSocketServer
         }
 
         public virtual void Close()
-        { 
+        {
+            m_asyncSocketServer.CloseClientSocket(this.AsyncSocketUserToken);
         }
 
         public virtual bool ProcessReceive(byte[] buffer, int offset, int count) //接收异步事件返回的数据，用于对数据进行缓存和分包

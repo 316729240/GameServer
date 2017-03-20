@@ -4,9 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using NETUploadClient.SyncSocketCore;
+using AsyncSocketServer;
 
 namespace NETUploadClient.SyncSocketProtocolCore
 {
+
     public class ClientBaseSocket : SyncSocketInvokeElement
     {
         protected string m_errorString;
@@ -40,7 +42,7 @@ namespace NETUploadClient.SyncSocketProtocolCore
                 m_outgoingDataAssembler.AddRequest();
                 m_outgoingDataAssembler.AddCommand(AsyncSocketServer.ProtocolKey.Active);
                 SendCommand();
-                bool bSuccess = RecvCommand();
+                bool bSuccess = false;// RecvCommand();
                 if (bSuccess)
                     return CheckErrorCode();
                 else
@@ -53,7 +55,39 @@ namespace NETUploadClient.SyncSocketProtocolCore
                 return false;
             }
         }
-
+        /// <summary>
+        /// 命令请求
+        /// </summary>
+        /// <param name="name">命令名</param>
+        /// <param name="para">参数组</param>
+        /// <returns></returns>
+        public bool SendCommand(string name, Parameter [] para)
+        {
+            try
+            {
+                m_outgoingDataAssembler.Clear();
+                m_outgoingDataAssembler.AddRequest();
+                m_outgoingDataAssembler.AddCommand(name);
+                for(int i = 0; i < para.Length; i++)
+                {
+                    m_outgoingDataAssembler.AddValue(para[i].Name, para[i].Value);
+                }
+                SendCommand();
+                bool bSuccess = false;// RecvCommand();
+                if (bSuccess)
+                {
+                    return bSuccess;
+                }
+                else
+                    return false;
+            }
+            catch (Exception E)
+            {
+                //记录日志
+                m_errorString = E.Message;
+                return false;
+            }
+        }
         public bool DoLogin(string userName, string password)
         {
             try
@@ -62,7 +96,7 @@ namespace NETUploadClient.SyncSocketProtocolCore
                 m_outgoingDataAssembler.AddRequest();
                 m_outgoingDataAssembler.AddCommand(AsyncSocketServer.ProtocolKey.Login);
                 m_outgoingDataAssembler.AddValue(AsyncSocketServer.ProtocolKey.UserName, userName);
-                m_outgoingDataAssembler.AddValue(AsyncSocketServer.ProtocolKey.Password, AsyncSocketServer.BasicFunc.MD5String(password));
+                //m_outgoingDataAssembler.AddValue(AsyncSocketServer.ProtocolKey.Password, AsyncSocketServer.BasicFunc.MD5String(password));
                 SendCommand();
                 bool bSuccess = RecvCommand();
                 if (bSuccess)

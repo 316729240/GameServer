@@ -23,7 +23,7 @@ namespace AsyncSocketServer
             m_socketFlag = "";
         }
 
-        public bool DoLogin()
+        public virtual bool DoLogin()
         {
             string userName = "";
             string password = "";

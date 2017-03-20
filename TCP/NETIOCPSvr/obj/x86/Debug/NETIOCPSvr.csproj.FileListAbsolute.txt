@@ -10,3 +10,7 @@ C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIO
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.exe
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.pdb
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\obj\x86\Debug\NETIOCPSvr.csprojResolveAssemblyReference.cache
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.exe
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.pdb
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.exe
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.pdb

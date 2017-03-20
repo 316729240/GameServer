@@ -7,6 +7,7 @@ using NETUploadClient.SyncSocketProtocolCore;
 using NETUploadClient.SyncSocketProtocol;
 using System.IO;
 using System.Threading;
+using AsyncSocketServer;
 
 namespace NETUploadClient
 {
@@ -16,10 +17,15 @@ namespace NETUploadClient
 
         static void Main(string[] args)
         {
-            ClientUploadSocket uploadSocket = new ClientUploadSocket();
-            uploadSocket.Connect("127.0.0.1", 9999);
+            ClientGameSocket gameSocket = new ClientGameSocket();
+            gameSocket.Connect("127.0.0.1", 9999);
+            gameSocket.OnRecvData = OnRecvData;
             Console.WriteLine("Connect Server Success");
-            uploadSocket.DoActive();
+            gameSocket.DoActive();
+            gameSocket.SendCommand("Login", new Parameter[] {
+                new Parameter("Token","1234122223")
+            });
+            /*
             uploadSocket.DoLogin("admin", "admin");
             Console.WriteLine("Login Server Success");
             Console.WriteLine("Please Input Upload FileName");
@@ -33,42 +39,13 @@ namespace NETUploadClient
                     break;
                 }
                 Thread.Sleep(10 * 1000); //发送失败等待10S后重连
-            }
+            }*/
             Console.ReadKey();
         }
-
-        protected static bool SendFile(string fileName, ClientUploadSocket uploadSocket)
+        static bool OnRecvData(IncomingDataParser data)
         {
-            FileStream fileStream = new FileStream(fileName, FileMode.Open, FileAccess.ReadWrite);
-            try
-            {
-                try
-                {
-                    long fileSize = 0;
-                    if (!uploadSocket.DoUpload("", Path.GetFileName(fileName), ref fileSize))
-                        throw new Exception(uploadSocket.ErrorString);
-                    fileStream.Position = fileSize;
-                    byte[] readBuffer = new byte[PacketSize];
-                    while (fileStream.Position < fileStream.Length)
-                    {
-                        int count = fileStream.Read(readBuffer, 0, PacketSize);
-                        if (!uploadSocket.DoData(readBuffer, 0, count))
-                            throw new Exception(uploadSocket.ErrorString);
-                    }
-                    if (!uploadSocket.DoEof(fileStream.Length))
-                        throw new Exception(uploadSocket.ErrorString);
-                    return true;
-                }
-                catch (Exception E)
-                {
-                    Console.WriteLine("Upload File Error: " + E.Message);
-                    return false;
-                }
-            }
-            finally
-            {
-                fileStream.Close();
-            }
+
+            return true;
         }
     }
 }

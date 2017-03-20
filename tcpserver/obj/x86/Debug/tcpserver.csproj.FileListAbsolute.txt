@@ -12,3 +12,17 @@ C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\SocketAsyncSvr.exe
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\UserIOCPServer.pdb
 C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\SocketAsyncSvr.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\tcpserver.exe.config
+E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.exe
+E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\tcpserver.exe
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\tcpserver.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\log4net.dll
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\SocketAsyncSvr.exe
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\UserIOCPServer.dll
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\SocketAsyncSvr.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\UserIOCPServer.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.csprojResolveAssemblyReference.cache
+E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.Form1.resources
+E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.Properties.Resources.resources
+E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.csproj.GenerateResource.Cache

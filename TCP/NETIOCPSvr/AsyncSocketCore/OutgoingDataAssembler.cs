@@ -5,6 +5,16 @@ using System.Text;
 
 namespace AsyncSocketServer
 {
+    public class Parameter
+    {
+        public string Name;
+        public object Value;
+        public Parameter(string name,object value)
+        {
+            this.Name = name;
+            this.Value = value;
+        }
+    }
     public class OutgoingDataAssembler
     {
         private List<string> m_protocolText;
@@ -62,6 +72,10 @@ namespace AsyncSocketServer
         public void AddValue(string protocolKey, string value)
         {
             m_protocolText.Add(protocolKey + ProtocolKey.EqualSign + value);
+        }
+        public void AddValue(string protocolKey, object value)
+        {
+            m_protocolText.Add(protocolKey + ProtocolKey.EqualSign + value.ToString());
         }
 
         public void AddValue(string protocolKey, short value)

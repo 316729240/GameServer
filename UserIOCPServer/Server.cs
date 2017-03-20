@@ -9,6 +9,8 @@ namespace UserIOCPServer
 {
     public class Server : AsyncSocketServer.AsyncSocketServer
     {
+        public Dictionary<string,BaseSocketProtocol> Users = new Dictionary<string,BaseSocketProtocol>();//建立链接用户
+
         public Server(int numConnections): base(numConnections)
         {
             //this.SocketTimeOutMS = socketTimeOutMS;
@@ -27,8 +29,8 @@ namespace UserIOCPServer
         public override void BuildingSocketInvokeElement(AsyncSocketUserToken userToken)
         {
             byte flag = userToken.ReceiveEventArgs.Buffer[userToken.ReceiveEventArgs.Offset];
-            if (flag == (byte)ProtocolFlag.Upload)
-                userToken.AsyncSocketInvokeElement = new UploadSocketProtocol(this, userToken);
+            if (flag == 2)
+                userToken.AsyncSocketInvokeElement = new GameSocketProtocol(this, userToken);
             if (userToken.AsyncSocketInvokeElement != null)
             {
                 //Program.Logger.InfoFormat("Building socket invoke element {0}.Local Address: {1}, Remote Address: {2}",

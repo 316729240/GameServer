@@ -78,9 +78,6 @@
     <Compile Include="..\NETIOCPSvr\AsyncSocketProtocolCore\ProtocolKey.cs">
       <Link>SyncSocketProtocolCore\ProtocolKey.cs</Link>
     </Compile>
-    <Compile Include="..\NETIOCPSvr\AsyncSocketPublic\BasicFunc.cs">
-      <Link>BasicFunc.cs</Link>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -90,7 +87,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SyncSocketProtocolCore\ClientBaseSocket.cs" />
-    <Compile Include="SyncSocketProtocol\ClientUploadSocket.cs" />
+    <Compile Include="SyncSocketProtocol\ClientGameSocket.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
