@@ -1,0 +1,8 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\bin\Debug\UserIOCPServer.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\bin\Debug\UserIOCPServer.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\bin\Debug\SocketAsyncSvr.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\bin\Debug\log4net.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\bin\Debug\SocketAsyncSvr.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\obj\Debug\UserIOCPServer.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\obj\Debug\UserIOCPServer.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPServer\obj\Debug\UserIOCPServer.pdb

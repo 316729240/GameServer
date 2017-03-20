@@ -1,0 +1,1 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\XY.NETIOCPSvr\obj\x86\Debug\XY.NETIOCPSvr.csprojResolveAssemblyReference.cache

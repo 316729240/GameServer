@@ -1,0 +1,7 @@
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPSvr\obj\Debug\UserIOCPSvr.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPSvr\bin\Debug\UserIOCPSvr.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPSvr\bin\Debug\UserIOCPSvr.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPSvr\bin\Debug\SocketAsyncSvr.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPSvr\bin\Debug\SocketAsyncSvr.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPSvr\obj\Debug\UserIOCPSvr.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\UserIOCPSvr\obj\Debug\UserIOCPSvr.pdb

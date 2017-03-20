@@ -1,0 +1,12 @@
+C:\Users\admin\Desktop\IOCPDemo_NET_V4\Bin\SocketAsyncSvr.exe.config
+C:\Users\admin\Desktop\IOCPDemo_NET_V4\Bin\SocketAsyncSvr.exe
+C:\Users\admin\Desktop\IOCPDemo_NET_V4\Bin\SocketAsyncSvr.pdb
+C:\Users\admin\Desktop\IOCPDemo_NET_V4\NET_Source\NETIOCPSvr\obj\x86\Debug\NETIOCPSvr.csprojResolveAssemblyReference.cache
+C:\Users\admin\Desktop\IOCPDemo_NET_V4\NET_Source\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.exe
+C:\Users\admin\Desktop\IOCPDemo_NET_V4\NET_Source\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\Bin\SocketAsyncSvr.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\TCP\NETIOCPSvr\obj\x86\Debug\NETIOCPSvr.csprojResolveAssemblyReference.cache

@@ -1,0 +1,14 @@
+c:\users\administrator\documents\visual studio 2010\Projects\tcpserver\tcpserver\obj\x86\Debug\tcpserver.Properties.Resources.resources
+c:\users\administrator\documents\visual studio 2010\Projects\tcpserver\tcpserver\obj\x86\Debug\tcpserver.csproj.GenerateResource.Cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\tcpserver.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\tcpserver.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\obj\x86\Debug\tcpserver.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\obj\x86\Debug\tcpserver.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\obj\x86\Debug\tcpserver.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\obj\x86\Debug\tcpserver.Form1.resources
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\tcpserver.exe.config
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\log4net.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\UserIOCPServer.dll
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\SocketAsyncSvr.exe
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\UserIOCPServer.pdb
+C:\Users\Administrator\Documents\Visual Studio 2010\Projects\tcpserver\tcpserver\bin\Debug\SocketAsyncSvr.pdb
