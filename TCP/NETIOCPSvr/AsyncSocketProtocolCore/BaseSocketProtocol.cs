@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Net.Sockets;
-
+using Common;
 namespace AsyncSocketServer
 {
     public class BaseSocketProtocol : AsyncSocketInvokeElement
@@ -46,7 +46,65 @@ namespace AsyncSocketServer
                 m_outgoingDataAssembler.AddFailure(ProtocolCode.ParameterError, "");
             return DoSendResult();
         }
-
+        /// <summary>
+        /// 发送一个json对象
+        /// </summary>
+        /// <param name="name">命令</param>
+        /// <param name="data">数据</param>
+        /// <returns></returns>
+        public bool SendJson(string name,object data)
+        {
+            return SendCommand(name,new Parameter[] {
+                new Parameter("data",data.ToJson())
+            });
+        }
+        /// <summary>
+        /// 发送一个json对象
+        /// </summary>
+        /// <param name="name">命令</param>
+        /// <param name="data">数据</param>
+        /// <returns></returns>
+        public bool SendJson(string name, Parameter [] data)
+        {
+            return SendCommand(name, new Parameter[] {
+                new Parameter("data",data.ToJson())
+            });
+        }
+        /// <summary>
+        /// 命令请求
+        /// </summary>
+        /// <param name="name">命令名</param>
+        /// <param name="para">参数组</param>
+        /// <returns></returns>
+        public bool SendCommand(string name, Parameter[] para)
+        {
+            try
+            {
+                m_outgoingDataAssembler.Clear();
+                m_outgoingDataAssembler.AddRequest();
+                m_outgoingDataAssembler.AddCommand(name);
+                if (para != null) { 
+                    for (int i = 0; i < para.Length; i++)
+                    {
+                        m_outgoingDataAssembler.AddValue(para[i].Name, para[i].Value);
+                    }
+                }
+                DoSendResult();
+                bool bSuccess = false;// RecvCommand();
+                if (bSuccess)
+                {
+                    return bSuccess;
+                }
+                else
+                    return false;
+            }
+            catch (Exception E)
+            {
+                //记录日志
+                //m_errorString = E.Message;
+                return false;
+            }
+        }
         public bool DoActive()
         {
             m_outgoingDataAssembler.AddSuccess();

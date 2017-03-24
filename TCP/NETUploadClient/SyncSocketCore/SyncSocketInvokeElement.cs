@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Net.Sockets;
 using AsyncSocketServer;
 using System.Threading;
@@ -15,53 +13,124 @@ namespace NETUploadClient.SyncSocketCore
         protected string m_host;
         protected int m_port;
         protected ProtocolFlag m_protocolFlag;
-        protected int SocketTimeOutMS { get {return m_tcpClient.SendTimeout; } set { m_tcpClient.SendTimeout = value; m_tcpClient.ReceiveTimeout = value; } }
+        protected int SocketTimeOutMS = ProtocolConst.SocketTimeOutMS;//{ get {return m_tcpClient.SendTimeout; } set { m_tcpClient.SendTimeout = value; m_tcpClient.ReceiveTimeout = value; } }
         private bool m_netByteOrder;
         public bool NetByteOrder { get { return m_netByteOrder; } set { m_netByteOrder = value; } } //长度是否使用网络字节顺序
         protected OutgoingDataAssembler m_outgoingDataAssembler; //协议组装器，用来组装往外发送的命令
         protected DynamicBufferManager m_recvBuffer; //接收数据的缓存
         protected IncomingDataParser m_incomingDataParser; //收到数据的解析器，用于解析返回的内容
         protected DynamicBufferManager m_sendBuffer; //发送数据的缓存，统一写到内存中，调用一次发送
-        public Func<IncomingDataParser, bool> OnRecvData = null;//接收到服务器数据时
+        //public Func<IncomingDataParser, bool> OnRecvData = null;//接收到服务器数据时
+        //public Func<int, bool> OnReconnect = null;//重连事件
+        //public Func< bool> OnConnect = null;//连接成功
+        int ReconnectCount = 0;/// 重新连接次数
         public SyncSocketInvokeElement()
         {
-            m_tcpClient = new TcpClient();
-            m_tcpClient.Client.Blocking = true; //使用阻塞模式，即同步模式
             m_protocolFlag = ProtocolFlag.None;
-            SocketTimeOutMS = ProtocolConst.SocketTimeOutMS;
+            //SocketTimeOutMS = ProtocolConst.SocketTimeOutMS;
             m_outgoingDataAssembler = new OutgoingDataAssembler();
             m_recvBuffer = new DynamicBufferManager(ProtocolConst.ReceiveBufferSize);
             m_incomingDataParser = new IncomingDataParser();
             m_sendBuffer = new DynamicBufferManager(ProtocolConst.ReceiveBufferSize);
         }
+        /// <summary>
+        /// 连接成功
+        /// </summary>
+        public virtual void ConnectSuccess()
+        {
 
+        }
+        /// <summary>
+        /// 接收到命令
+        /// </summary>
+        /// <param name="comm"></param>
+        public virtual void RecvCommand(IncomingDataParser comm)
+        {
+
+        }
+        /// <summary>
+        /// 是否重新链接
+        /// </summary>
+        /// <param name="count">第几次链接</param>
+        /// <returns></returns>
+        public virtual bool IsReconnect(int count)
+        {
+            return true;
+        }
+        #region 连接到服务器
         public void Connect(string host, int port)
         {
-            m_tcpClient.Connect(host, port);
+            m_host = host;
+            m_port = port;
+            Connect();
+        }
+        void Connect()
+        {
+            m_tcpClient = new TcpClient();
+            m_tcpClient.Client.Blocking = true; //使用阻塞模式，即同步模式
+            try { 
+                m_tcpClient.Connect(m_host, m_port);
+            }catch(Exception e)
+            {
+                Reconnect();
+                return;
+            }
             byte[] socketFlag = new byte[1];
             socketFlag[0] = (byte)m_protocolFlag;
             m_tcpClient.Client.Send(socketFlag, SocketFlags.None); //发送标识
-            m_host = host;
-            m_port = port;
+            ConnectSuccess();
+//            if (OnConnect != null) OnConnect();
+             ReconnectCount = 0;
             ThreadPool.QueueUserWorkItem(RecvData);
         }
-
+        /// <summary>
+        /// 重新连接
+        /// </summary>
+        void Reconnect()
+        {
+            if (m_tcpClient == null)
+            {
+                //主动断开时，暂不做处理
+            }else if (!IsOnline())
+            {
+                //意外断开时
+                ReconnectCount++;
+                if(IsReconnect(ReconnectCount)) Connect();
+                //if (OnReconnect!= null) { 
+                //    if(OnReconnect(ReconnectCount)) Connect();
+                //}
+            }
+        }
+        #endregion
+        #region 主动断开
         public void Disconnect()
         {
             m_tcpClient.Close();
-            m_tcpClient = new TcpClient();
+            m_tcpClient = null;// new TcpClient();
             //m_tcpClient.Client.
         }
+        #endregion
         /// <summary>
         /// 接收数据处理
         /// </summary>
         /// <param name="s"></param>
         void RecvData(object s)
         {
-            while (true) {
+            while (IsOnline()) {
                 m_recvBuffer.Clear();
-                int count=m_tcpClient.Client.Receive(m_recvBuffer.Buffer, sizeof(int), SocketFlags.None);
-                if (count == 0)return;
+                int count = 0;
+                try
+                {
+                    count = m_tcpClient.Client.Receive(m_recvBuffer.Buffer, sizeof(int), SocketFlags.None);
+                }
+                catch {
+                    //连接可能关闭
+                }
+                if (count == 0)
+                {
+                    Reconnect();
+                    return;
+                }
                 int packetLength = BitConverter.ToInt32(m_recvBuffer.Buffer, 0); //获取包长度
                 if (NetByteOrder)
                     packetLength = System.Net.IPAddress.NetworkToHostOrder(packetLength); //把网络字节顺序转为本地字节顺序
@@ -72,9 +141,14 @@ namespace NETUploadClient.SyncSocketCore
                 IncomingDataParser comm = new IncomingDataParser();
                 if (comm.DecodeProtocolText(tmpStr))
                 {
-                    if (OnRecvData != null) OnRecvData(comm);
+                    RecvCommand(comm);
+                    //if (OnRecvData != null) OnRecvData(comm);
                 }
             }
+        }
+        bool IsOnline()
+        {
+            return !((m_tcpClient.Client.Poll(1000, SelectMode.SelectRead) && (m_tcpClient.Client.Available == 0)) || !m_tcpClient.Client.Connected);
         }
         public void SendCommand()
         {

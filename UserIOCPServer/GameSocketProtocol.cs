@@ -6,12 +6,19 @@ using System.Net.Sockets;
 using System.IO;
 using AsyncSocketServer;
 
-namespace UserIOCPServer
+namespace GameServer
 {
     public class GameSocketProtocol : BaseSocketProtocol
     {
-        string token = "";
-        HashSet<BaseSocketProtocol> loginUser = new HashSet<BaseSocketProtocol>();//建立链接用户
+        /// <summary>
+        /// 头像 
+        /// </summary>
+        string Portait = "";
+        /// <summary>
+        /// 用户登录标识
+        /// </summary>
+        string Token = "";
+        //HashSet<BaseSocketProtocol> loginUser = new HashSet<BaseSocketProtocol>();//建立链接用户
         public GameSocketProtocol(Server asyncSocketServer, AsyncSocketUserToken asyncSocketUserToken)
             : base(asyncSocketServer, asyncSocketUserToken)
         {
@@ -20,11 +27,9 @@ namespace UserIOCPServer
         public override bool ProcessCommand(byte[] buffer, int offset, int count) //处理分完包的数据，子类从这个方法继承
         {
             string command = m_incomingDataParser.Command;
-            if (command == "Active") return DoActive();
-            else if (command == "Login")
-            {
-                return DoLogin();
-            }
+            if (command == "Active") DoActive();
+            else if (command == "Login") DoLogin();
+            else if (command == "LoginRoom") DoLoginRoom();
             return true;
         }
         /// <summary>
@@ -33,16 +38,17 @@ namespace UserIOCPServer
         /// <returns></returns>
         public override bool DoLogin()
         {
-            m_incomingDataParser.GetValue("Token", ref token);
+            m_incomingDataParser.GetValue("token", ref Token);
+            m_incomingDataParser.GetValue("username", ref m_userName);
+            m_incomingDataParser.GetValue("portait", ref Portait);
+            Program.Logger.Info("用户连接信息:"+ m_userName + ":"+Token);
             Server server = (Server)m_asyncSocketServer;
-            if (server.Users.ContainsKey(token))
+            if (server.Users.ContainsKey(Token))
             {
-                GameSocketProtocol SocketProtocol = (GameSocketProtocol)server.Users[token];
+                GameSocketProtocol SocketProtocol = (GameSocketProtocol)server.Users[Token];
                 SocketProtocol.Close();
             }
-            server.Users[token] = this;
-            
-            DoSendResult();
+            server.Users[Token] = this;
             return true;
         }
         /// <summary>
@@ -51,7 +57,17 @@ namespace UserIOCPServer
         public override void Close()
         {
             base.Close();
-            ((Server)m_asyncSocketServer).Users.Remove(token);
+            ((Server)m_asyncSocketServer).Users.Remove(Token);
+        }
+        void DoLoginRoom()
+        {
+            //int count= m_incomingDataParser.GetInt("Count");
+            string roomId=m_incomingDataParser.GetString("roomId").Trim();
+            Program.Logger.Info(UserName + "进入房间:" + roomId);
+            if (roomId == "") return;
+            Server server = (Server)m_asyncSocketServer;
+            Room room=((Server)m_asyncSocketServer).GetRoom(roomId);
+            room.Login(new Player (this.Token, this.UserName,this.Portait,this));
         }
     }
 }

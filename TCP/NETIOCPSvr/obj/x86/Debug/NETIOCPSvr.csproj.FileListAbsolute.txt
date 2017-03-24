@@ -14,3 +14,7 @@ E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.ex
 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\obj\x86\Debug\SocketAsyncSvr.pdb
 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.exe
 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\bin\Debug\SocketAsyncSvr.pdb
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\bin\Debug\Common.dll
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\bin\Debug\LitJson.dll
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\bin\Debug\Common.pdb
+E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\obj\x86\Debug\NETIOCPSvr.csprojResolveAssemblyReference.cache

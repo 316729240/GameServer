@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 
 namespace AsyncSocketServer
@@ -69,6 +68,32 @@ namespace AsyncSocketServer
             }
             else
                 return false;
+        }
+
+        public int GetInt(string protocolKey)
+        {
+            int value = 0;
+            int index = m_names.IndexOf(protocolKey.ToLower());
+            if (index > -1)
+            {
+                try { 
+                value =int.Parse( m_values[index]);
+                }catch
+                {
+
+                }
+            }
+            return value;
+        }
+        public string GetString(string protocolKey)
+        {
+            string value = "";
+            int index = m_names.IndexOf(protocolKey.ToLower());
+            if (index > -1)
+            {
+                value = m_values[index];
+            }
+            return value;
         }
 
         public List<string> GetValue(string protocolKey)

@@ -4,13 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Net;
 using AsyncSocketServer;
+using GameServer.Mahjong;
+using log4net;
 
-namespace UserIOCPServer
+namespace GameServer
 {
+
     public class Server : AsyncSocketServer.AsyncSocketServer
     {
-        public Dictionary<string,BaseSocketProtocol> Users = new Dictionary<string,BaseSocketProtocol>();//建立链接用户
 
+        public Dictionary<string,BaseSocketProtocol> Users = new Dictionary<string,BaseSocketProtocol>();//建立链接用户
+        public Dictionary<string, Room> Rooms = new Dictionary<string, Room>();
         public Server(int numConnections): base(numConnections)
         {
             //this.SocketTimeOutMS = socketTimeOutMS;
@@ -36,6 +40,24 @@ namespace UserIOCPServer
                 //Program.Logger.InfoFormat("Building socket invoke element {0}.Local Address: {1}, Remote Address: {2}",
                    // userToken.AsyncSocketInvokeElement, userToken.ConnectSocket.LocalEndPoint, userToken.ConnectSocket.RemoteEndPoint);
             }
+        }
+        /// <summary>
+        /// 获取指定游戏房间对象
+        /// </summary>
+        /// <param name="roomId"></param>
+        /// <returns></returns>
+        public Room GetRoom(string roomId)
+        {
+            Room room = null;
+            if (Rooms.ContainsKey(roomId))
+            {
+                room = Rooms[roomId];
+            }else
+            {
+                room=new Room(new BaseMahjong(), 2);
+                Rooms[roomId] = room;
+            }
+            return room;
         }
     }
 }

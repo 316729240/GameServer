@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace AsyncSocketServer
 {
@@ -75,7 +73,7 @@ namespace AsyncSocketServer
         }
         public void AddValue(string protocolKey, object value)
         {
-            m_protocolText.Add(protocolKey + ProtocolKey.EqualSign + value.ToString());
+            m_protocolText.Add(protocolKey + ProtocolKey.EqualSign + (value==null?"":value.ToString()));
         }
 
         public void AddValue(string protocolKey, short value)

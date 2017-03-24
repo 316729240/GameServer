@@ -19,10 +19,15 @@ E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\tcpserver.exe
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\tcpserver.pdb
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\log4net.dll
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\SocketAsyncSvr.exe
-E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\UserIOCPServer.dll
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\SocketAsyncSvr.pdb
-E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\UserIOCPServer.pdb
 E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.csprojResolveAssemblyReference.cache
 E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.Form1.resources
 E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.Properties.Resources.resources
 E:\myproject\麻将窝\GameServer\tcpserver\obj\x86\Debug\tcpserver.csproj.GenerateResource.Cache
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\GameServer.dll
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Mahjong.dll
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Mahjong.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\GameServer.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Common.dll
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\LitJson.dll
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Common.pdb

@@ -83,13 +83,17 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Mahjong\Mahjong.csproj">
+      <Project>{9624223b-5869-4a8d-a166-eae78cc8ea8a}</Project>
+      <Name>Mahjong</Name>
+    </ProjectReference>
     <ProjectReference Include="..\TCP\NETIOCPSvr\NETIOCPSvr.csproj">
-      <Project>{119D500C-48AA-4C40-8189-0783653F8086}</Project>
+      <Project>{119d500c-48aa-4c40-8189-0783653f8086}</Project>
       <Name>NETIOCPSvr</Name>
     </ProjectReference>
-    <ProjectReference Include="..\UserIOCPServer\UserIOCPServer.csproj">
-      <Project>{38AF4BD7-F024-4BFA-87C9-169B628EA395}</Project>
-      <Name>UserIOCPServer</Name>
+    <ProjectReference Include="..\UserIOCPServer\GameServer.csproj">
+      <Project>{38af4bd7-f024-4bfa-87c9-169b628ea395}</Project>
+      <Name>GameServer</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

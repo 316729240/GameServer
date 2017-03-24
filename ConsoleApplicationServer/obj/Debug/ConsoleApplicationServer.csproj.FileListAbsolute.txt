@@ -1,0 +1,14 @@
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\ConsoleApplicationServer.exe.config
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\ConsoleApplicationServer.exe
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\ConsoleApplicationServer.pdb
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\GameServer.dll
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\log4net.dll
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\SocketAsyncSvr.exe
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\Common.dll
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\LitJson.dll
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\SocketAsyncSvr.pdb
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\GameServer.pdb
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\Common.pdb
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\obj\Debug\ConsoleApplicationServer.csprojResolveAssemblyReference.cache
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\obj\Debug\ConsoleApplicationServer.exe
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\obj\Debug\ConsoleApplicationServer.pdb
