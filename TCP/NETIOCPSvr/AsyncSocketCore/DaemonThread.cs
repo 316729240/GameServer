@@ -30,7 +30,7 @@ namespace AsyncSocketServer
                         break;
                     try
                     {
-                        if ((DateTime.Now - userTokenArray[i].ActiveDateTime).Milliseconds > m_asyncSocketServer.SocketTimeOutMS) //超时Socket断开
+                        if (m_asyncSocketServer.SocketTimeOutMS>0 && (DateTime.Now - userTokenArray[i].ActiveDateTime).Milliseconds > m_asyncSocketServer.SocketTimeOutMS) //超时Socket断开
                         {
                             lock (userTokenArray[i])
                             {

@@ -1,4 +1,5 @@
 ﻿using AsyncSocketServer;
+using Common;
 using NETUploadClient.SyncSocketProtocolCore;
 using System;
 using System.Collections.Generic;
@@ -7,32 +8,21 @@ using System.Threading;
 
 namespace GameClient
 {
-    public class GameRoom : ClientBaseSocket
+    public abstract class Room : ClientBaseSocket
     {
-        /// <summary>
-        /// 用户连接标识
-        /// </summary>
-        public string Token { get; set; }
-        /// <summary>
-        /// 用户名
-        /// </summary>
-        public string Username { get; set; }
-        /// <summary>
-        /// 用户头像
-        /// </summary>
-        public string Portait { get; set; }
+        Player Player = null;//当前玩家
+        Player[] PlayerList = null;//房间中的玩家 
         /// <summary>
         /// 房间id
         /// </summary>
         public string RoomId { get; set; }
-        public GameRoom(string token,string username,string portait,string roomId)
+        public Room(string serverIP,Player player,string roomId)
         {
-            this.Token = token;
-            this.Username = username;
-            this.Portait = portait;
+            Player = player;
             this.RoomId = roomId;
             m_protocolFlag = AsyncSocketServer.ProtocolFlag.Upload;
-            this.Connect("127.0.0.1", 9999);
+            string[] ip = serverIP.Split(':');
+            this.Connect(ip[0],int.Parse(ip[1]));
         }
         /// <summary>
         /// 连接成功
@@ -42,9 +32,9 @@ namespace GameClient
             Common.WriteLog("与服务器连接成功");
             this.DoActive();
             this.SendCommand("Login", new Parameter[] {
-                new Parameter("token",Token),
-                new Parameter("username",Username),
-                new Parameter("portait",Portait)
+                new Parameter("token",Player.Token),
+                new Parameter("username",Player.Name),
+                new Parameter("portrait",Player.Portrait)
             });
             this.SendCommand("LoginRoom", new Parameter[] {
                 new Parameter("roomId",RoomId)
@@ -58,10 +48,44 @@ namespace GameClient
         {
             LitJson.JsonData data =LitJson.JsonMapper.ToObject(comm.GetString("data"));
             Common.WriteLog("收到命令："+comm.Command);
-            if (comm.Command== "RadioPalyerInfo")
+            if (comm.Command== "RadioPalyerInfo")//广播玩家信息
             {
+                int index=data["index"].ToInt();
+                if (Player.Token == data["token"].ToStr())
+                {
+                    PlayerList[index] = Player;
+                    PlayerList[index].Hand = CreateHand();
+                }
+                else
+                {
+                    PlayerList[index] = new Player
+                    {
+                        Name = data["name"].ToStr(),
+                        Token = data["token"].ToStr(),
+                        Portrait = data["portrait"].ToStr(),
+                        Index = data["index"].ToInt(),
+                        Hand = CreateHand()
+                    };
+                }
+            }
+            else if(comm.Command== "SendCard")//获取手牌信息
+            {
+
+            }
+            else if (comm.Command == "RadioPlayerPlay")//广播出牌信息
+            {
+
+            }
+            else if (comm.Command == "SetPlayerPlay")//设置当前用户可以出牌
+            {
+
             }
         }
+        /// <summary>
+        /// 创建手牌对象
+        /// </summary>
+        /// <returns></returns>
+        public abstract IHand CreateHand();
         /// <summary>
         /// 是否重新链接
         /// </summary>

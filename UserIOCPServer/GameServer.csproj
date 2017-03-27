@@ -49,6 +49,7 @@
     <Compile Include="Mahjong\BaseMahjong.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MahjongRoom.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Server.cs" />
   </ItemGroup>

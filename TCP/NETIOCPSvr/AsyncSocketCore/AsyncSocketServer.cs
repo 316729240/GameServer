@@ -203,7 +203,7 @@ namespace AsyncSocketServer
             }
             else
             {
-                Program.Logger.WarnFormat("非法连接并关闭连接. Local Address: {0}, Remote Address: {1}", userToken.ConnectSocket.LocalEndPoint,
+                Program.Logger.WarnFormat("与客户端链接断开. Local Address: {0}, Remote Address: {1}", userToken.ConnectSocket.LocalEndPoint,
                        userToken.ConnectSocket.RemoteEndPoint);
                 CloseClientSocket(userToken);
             }

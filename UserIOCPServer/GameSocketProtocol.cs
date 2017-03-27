@@ -18,6 +18,10 @@ namespace GameServer
         /// 用户登录标识
         /// </summary>
         string Token = "";
+        /// <summary>
+        /// 当前玩家所在房间
+        /// </summary>
+        Room GameRoom = null;
         //HashSet<BaseSocketProtocol> loginUser = new HashSet<BaseSocketProtocol>();//建立链接用户
         public GameSocketProtocol(Server asyncSocketServer, AsyncSocketUserToken asyncSocketUserToken)
             : base(asyncSocketServer, asyncSocketUserToken)
@@ -58,6 +62,7 @@ namespace GameServer
         {
             base.Close();
             ((Server)m_asyncSocketServer).Users.Remove(Token);
+            if (GameRoom != null) GameRoom.RemovePlayer(Token);
         }
         void DoLoginRoom()
         {
@@ -66,8 +71,8 @@ namespace GameServer
             Program.Logger.Info(UserName + "进入房间:" + roomId);
             if (roomId == "") return;
             Server server = (Server)m_asyncSocketServer;
-            Room room=((Server)m_asyncSocketServer).GetRoom(roomId);
-            room.Login(new Player (this.Token, this.UserName,this.Portait,this));
+            GameRoom = ((Server)m_asyncSocketServer).GetRoom(roomId);
+            GameRoom.Login(new Player (this.Token, this.UserName,this.Portait,this));
         }
     }
 }

@@ -19,7 +19,7 @@ namespace GameServer
         /// <summary>
         /// 获取牌组
         /// </summary>
-        GameCard [] GetCards();
+        int [] GetCards(int count);
         /// <summary>
         /// 玩家出牌后等待期它玩家反馈
         /// </summary>

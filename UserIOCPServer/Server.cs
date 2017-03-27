@@ -54,7 +54,7 @@ namespace GameServer
                 room = Rooms[roomId];
             }else
             {
-                room=new Room(new BaseMahjong(), 2);
+                room=new MahjongRoom (roomId,  2);
                 Rooms[roomId] = room;
             }
             return room;

@@ -44,7 +44,7 @@ namespace GameServer
         /// 向玩家发牌
         /// </summary>
         /// <param name="cards"></param>
-        public void SendCard(GameCard [] cards)
+        public void SendCard(int [] cards)
         {
             UserProtocol.SendJson("SendCard", cards);
         }
@@ -64,24 +64,16 @@ namespace GameServer
         /// 广播玩家信息
         /// </summary>
         /// <param name="player">玩家信息</param>
-        public void RadioPalyerInfo(Player [] player)
+        /// <param name="status">玩家状态</param>
+        public void RadioPalyerInfo(Player player,int status)
         {
-            List<Dictionary<string, object>> list = new List<Dictionary<string, object>>();
-            for (int i = 0; i < player.Length; i++)
-            {
-                if (player[i] != null) { 
-                    Dictionary<string, object> attr = new Dictionary<string, object>();
-                    attr["token"] = player[i].Token;
-                    attr["name"] = player[i].Name;
-                    attr["portrait"] = player[i].Portrait;
-                    list.Add(attr);
-                }
-                else
-                {
-                    list.Add(null);
-                }
-            }
-            UserProtocol.SendJson("RadioPalyerInfo", list);
+            Dictionary<string, object> attr = new Dictionary<string, object>();
+            attr["status"] = status;
+            attr["token"] = player.Token;
+            attr["name"] = player.Name;
+            attr["portrait"] = player.Portrait;
+            attr["index"] = player.Index;
+            UserProtocol.SendJson("RadioPalyerInfo", attr);
         }
         /// <summary>
         /// 向指定玩家发送出牌令
@@ -89,7 +81,7 @@ namespace GameServer
         /// <param name="cards">所出的牌</param>
         public void SendPlayToken()
         {
-            UserProtocol.SendCommand("RadioPlayerPlay",null);
+            UserProtocol.SendCommand("SetPlayerPlay",null);
         }
         
         /// <summary>
