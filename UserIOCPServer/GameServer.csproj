@@ -31,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LitJson">
+      <HintPath>..\TCP\NETIOCPSvr\bin\Debug\LitJson.dll</HintPath>
+    </Reference>
     <Reference Include="log4net, Version=1.2.11.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\TCP\NETIOCPSvr\bin\Debug\log4net.dll</HintPath>
@@ -58,9 +61,9 @@
       <Project>{9624223b-5869-4a8d-a166-eae78cc8ea8a}</Project>
       <Name>Mahjong</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\Common\GameCommon.csproj">
       <Project>{8991c7f6-89e8-498d-909c-821b99191005}</Project>
-      <Name>Common</Name>
+      <Name>GameCommon</Name>
     </ProjectReference>
     <ProjectReference Include="..\TCP\NETIOCPSvr\NETIOCPSvr.csproj">
       <Project>{119D500C-48AA-4C40-8189-0783653F8086}</Project>

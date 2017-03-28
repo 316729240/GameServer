@@ -64,11 +64,17 @@ namespace AsyncSocketServer
         /// <param name="name">命令</param>
         /// <param name="data">数据</param>
         /// <returns></returns>
-        public bool SendJson(string name, Parameter [] data)
+        public bool SendJson(string name,Dictionary<string,object> data)
         {
+            if (data == null)
+            {
+                return SendCommand(name,null);
+            }
+            else { 
             return SendCommand(name, new Parameter[] {
                 new Parameter("data",data.ToJson())
             });
+            }
         }
         /// <summary>
         /// 命令请求

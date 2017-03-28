@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Common
+namespace GameCommon
 {
 
     public static class Extend
@@ -29,6 +29,15 @@ namespace Common
                 return Convert.ToDouble(obj);
             }
             catch { return 0; }
+        }
+        public static int [] ToIntArr(this JsonData data)
+        {
+            int[] arr = new int[data.Count];
+            for(int i = 0; i < arr.Length; i++)
+            {
+                arr[i] = data[i].ValueAsInt();
+            }
+            return arr;
         }
     }
 }

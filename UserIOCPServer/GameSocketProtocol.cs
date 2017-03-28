@@ -31,6 +31,17 @@ namespace GameServer
         public override bool ProcessCommand(byte[] buffer, int offset, int count) //处理分完包的数据，子类从这个方法继承
         {
             string command = m_incomingDataParser.Command;
+            if (GameRoom != null)
+            {
+                try
+                {
+                    //当用户在房间时，将消息转入房间处理
+                    GameRoom.Accept(Token, m_incomingDataParser);
+                }catch
+                {
+                    Program.Logger.ErrorFormat("房间处理协议出错,command:"+ m_incomingDataParser.Command);
+                }
+            }
             if (command == "Active") DoActive();
             else if (command == "Login") DoLogin();
             else if (command == "LoginRoom") DoLoginRoom();

@@ -113,9 +113,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Common\Common.csproj">
+    <ProjectReference Include="..\..\Common\GameCommon.csproj">
       <Project>{8991c7f6-89e8-498d-909c-821b99191005}</Project>
-      <Name>Common</Name>
+      <Name>GameCommon</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

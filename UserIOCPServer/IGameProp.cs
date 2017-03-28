@@ -5,11 +5,21 @@ using System.Text;
 
 namespace GameServer
 {
-    //游戏中的牌面
-    public class GameCard
+    public class Card
     {
-        public int Type { get; set; }
-        public int Value { get; set; }
+        public Card(int number,bool isShow)
+        {
+            CardNumber = number;
+            IsShow = isShow;
+        }
+        /// <summary>
+        /// 牌面
+        /// </summary>
+        public int CardNumber { get; set; }
+        /// <summary>
+        /// 是否为明牌
+        /// </summary>
+        public bool IsShow = false;
     }
     /// <summary>
     /// 游戏道具

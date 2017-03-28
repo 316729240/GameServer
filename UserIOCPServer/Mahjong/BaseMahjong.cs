@@ -79,7 +79,7 @@ namespace GameServer.Mahjong
 
         public void WaitPlayer()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         }
     }
 }

@@ -12,3 +12,5 @@ E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\Common.pdb
 E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\obj\Debug\ConsoleApplicationServer.csprojResolveAssemblyReference.cache
 E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\obj\Debug\ConsoleApplicationServer.exe
 E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\obj\Debug\ConsoleApplicationServer.pdb
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\Mahjong.dll
+E:\myproject\麻将窝\GameServer\ConsoleApplicationServer\bin\Debug\Mahjong.pdb

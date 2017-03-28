@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common.cs" />
-    <Compile Include="IHand.cs" />
     <Compile Include="MahjongRoom.cs" />
     <Compile Include="Room.cs" />
     <Compile Include="Player.cs" />
@@ -50,9 +49,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common\Common.csproj">
+    <ProjectReference Include="..\..\Mahjong\Mahjong.csproj">
+      <Project>{9624223b-5869-4a8d-a166-eae78cc8ea8a}</Project>
+      <Name>Mahjong</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\GameCommon.csproj">
       <Project>{8991c7f6-89e8-498d-909c-821b99191005}</Project>
-      <Name>Common</Name>
+      <Name>GameCommon</Name>
     </ProjectReference>
     <ProjectReference Include="..\TCP\NETUploadClient\NETUploadClient.csproj">
       <Project>{1ea7cdfc-c506-4598-8e32-c256437d7da4}</Project>

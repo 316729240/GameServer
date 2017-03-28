@@ -1,5 +1,7 @@
 ﻿using AsyncSocketServer;
 using Common;
+using GameCommon;
+using LitJson;
 using NETUploadClient.SyncSocketProtocolCore;
 using System;
 using System.Collections.Generic;
@@ -10,14 +12,19 @@ namespace GameClient
 {
     public abstract class Room : ClientBaseSocket
     {
-        Player Player = null;//当前玩家
+        internal Player Player = null;//当前玩家
         Player[] PlayerList = null;//房间中的玩家 
+        /// <summary>
+        /// 房间状态 
+        /// </summary>
+        public bool IsStart = false;
         /// <summary>
         /// 房间id
         /// </summary>
         public string RoomId { get; set; }
-        public Room(string serverIP,Player player,string roomId)
+        public Room(string serverIP,Player player,string roomId,Dictionary<string,object> config)
         {
+            PlayerList = new Player[config["playerCount"].ToInt()];
             Player = player;
             this.RoomId = roomId;
             m_protocolFlag = AsyncSocketServer.ProtocolFlag.Upload;
@@ -46,41 +53,115 @@ namespace GameClient
         /// <param name="comm"></param>
         public override void RecvCommand(IncomingDataParser comm)
         {
-            LitJson.JsonData data =LitJson.JsonMapper.ToObject(comm.GetString("data"));
-            Common.WriteLog("收到命令："+comm.Command);
-            if (comm.Command== "RadioPalyerInfo")//广播玩家信息
+            LitJson.JsonData data = LitJson.JsonMapper.ToObject(comm.GetString("data"));
+            Common.WriteLog("收到命令：" + comm.Command + "  " + comm.GetString("data"));
+            if (comm.Command == "RoomPlayerList")//加载当前房间中的用户列表
             {
-                int index=data["index"].ToInt();
-                if (Player.Token == data["token"].ToStr())
+                #region 进入房间时加载当前玩家列表
+                for(int i=0;i< data.Count; i++)
                 {
-                    PlayerList[index] = Player;
-                    PlayerList[index].Hand = CreateHand();
+                    int index = data[i]["index"].ValueAsInt();
+                    string token = data[i]["token"].ToStr();
+                    if (Player.Token == token)
+                    {
+                        PlayerList[index] = Player;
+                        PlayerList[index].Hand = CreateHand();
+                    }else
+                    {
+                        PlayerList[index] = new Player
+                        {
+                            Name = data[i]["name"].ValueAsString(),
+                            Token = data[i]["token"].ValueAsString(),
+                            Portrait = data[i]["portrait"].ValueAsString(),
+                            Index = data[i]["index"].ValueAsInt(),
+                            Status = data[i]["status"].ValueAsInt() == 1,
+                            Hand = CreateHand()
+                        };
+                    }
+                }
+                #endregion
+            }
+            else if (comm.Command== "RadioPalyerInfo")//广播玩家信息
+            {
+                #region 收到其他玩家状态变更
+                int index = data["index"].ValueAsInt();
+                    PlayerList[index] = new Player
+                    {
+                        Name = data["name"].ValueAsString(),
+                        Token = data["token"].ValueAsString(),
+                        Portrait = data["portrait"].ValueAsString(),
+                        Index = data["index"].ValueAsInt(),
+                        Status= data["status"].ValueAsInt()==1,
+                        Hand = CreateHand()
+                    };
+                if (PlayerList[index].Status)
+                {
+                    Common.WriteLog(PlayerList[index].Name + "玩家进入");
                 }
                 else
                 {
-                    PlayerList[index] = new Player
+                    if (IsStart)
                     {
-                        Name = data["name"].ToStr(),
-                        Token = data["token"].ToStr(),
-                        Portrait = data["portrait"].ToStr(),
-                        Index = data["index"].ToInt(),
-                        Hand = CreateHand()
-                    };
+                        Common.WriteLog(PlayerList[index].Name + "玩家掉线");
+                    }
+                    else
+                    {
+                        Common.WriteLog(PlayerList[index].Name + "玩家离开");
+                    }
                 }
+                #endregion
             }
-            else if(comm.Command== "SendCard")//获取手牌信息
+            else if(comm.Command== "GameStart")//游戏开始
             {
-
+                IsStart = true;
             }
-            else if (comm.Command == "RadioPlayerPlay")//广播出牌信息
+            else if(comm.Command== "SendCard")//收到新牌
             {
-
+                Player.Hand.AddCards(data.ToIntArr());//加入至手牌中
+                ReceivedCard(data);
+            }
+            else if(comm.Command== "RadioSendCard")//其他玩家获取手牌信息
+            {
+                int index = data["index"].ValueAsInt();
+                int count = data["count"].ValueAsInt();
+                PlayerList[index].Hand.AddCards(count);//加入到手牌
+            }
+            else if (comm.Command == "RadioPlayerPlay")//其他玩家出牌信息
+            {
+                int index = data["index"].ValueAsInt();
+                LitJson.JsonData cards = data["cards"];
+                int[] operation = CheckPlay(PlayerList[index], data);
+                ResponsePlayerPlay(comm.GetInt("sendNo"), operation);
             }
             else if (comm.Command == "SetPlayerPlay")//设置当前用户可以出牌
-            {
-
+            { 
+                PlayerPlay();//玩家出牌
             }
         }
+        /// <summary>
+        /// 检测玩家是否有可能对当前出牌做出响应
+        /// </summary>
+        /// <param name="player"></param>
+        /// <param name="cards"></param>
+        public abstract int[] CheckPlay(Player player, JsonData cards);
+        /// <summary>
+        /// 玩家出牌
+        /// </summary>
+        /// <returns></returns>
+        public abstract void PlayerPlay();
+        /// <summary>
+        /// 出牌
+        /// </summary>
+        public void Play(int [] cards)
+        {
+            Player.Hand.Removed(cards);
+            this.SendJson("PlayerPlay", cards);
+        }
+        /// <summary>
+        /// 获得新牌
+        /// </summary>
+        /// <param name="data"></param>
+        public abstract void ReceivedCard(JsonData data);
         /// <summary>
         /// 创建手牌对象
         /// </summary>
@@ -103,6 +184,21 @@ namespace GameClient
             {
                 Console.WriteLine("连接超时");
                 return false;
+            }
+        }
+        void ResponsePlayerPlay(int sendNo,int [] operation)
+        {
+            if (operation == null)
+            {
+                this.SendCommand("ResponsePlayerPlay", new Parameter[] {
+                        new Parameter("sendNo",sendNo)
+                    });
+            }
+            else { 
+            this.SendCommand("ResponsePlayerPlay", new Parameter[] {
+                        new Parameter("sendNo",sendNo),
+                        new Parameter("data",operation.ToJson())
+                    });
             }
         }
     }

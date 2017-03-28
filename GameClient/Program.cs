@@ -17,7 +17,9 @@ namespace GameClient
                 Token=token,
                 Portrait=""
             };
-            Room room = new Room("127.0.0.1:9999", player, "100023");
+            Dictionary<string, object> config = new Dictionary<string, object>();
+            config["playerCount"] = 2;
+            MahjongRoom room = new MahjongRoom("127.0.0.1:9999", player, "100023",config);
             Console.ReadKey();
         }
     }

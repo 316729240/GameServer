@@ -1,9 +1,10 @@
 ﻿using AsyncSocketServer;
-using Mahjong;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using GameCommon;
+using Mahjong;
 
 namespace GameServer
 {
@@ -22,9 +23,6 @@ namespace GameServer
         {
             Prop = new Mahjong.BaseMahjong();
         }
-
-
-
         /// <summary>
         /// 游戏开始
         /// </summary>
@@ -36,15 +34,34 @@ namespace GameServer
                 SendCard(cards);
             }
             #endregion
-            PlayerList[0].SendPlayToken();
+            SetGameToken(0);
         }
         /// <summary>
         /// 收集到玩家对出牌的反馈时
         /// </summary>
-        /// <param name="player"></param>
-        public override void DoPlayerFeedback(Player player)
+        /// <param name="player">上次出牌人</param>
+        public override void DoPlayerFeedback(Player player,Dictionary<int, LitJson.JsonData> operation)
         {
+            if (true)//其他玩家无操作时，继续给下一个玩家发牌
+            {
+                int[] cards = Prop.GetCards(1);
+                SendCard(cards);
+                SetGameToken();
+            }
+            else
+            {
 
+            }
+        }
+
+
+        /// <summary>
+        /// 创建麻将手牌对象
+        /// </summary>
+        /// <returns></returns>
+        public override IHand CreateHand()
+        {
+            return new MahjongHand();
         }
     }
 }

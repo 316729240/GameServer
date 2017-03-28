@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using NETUploadClient.SyncSocketCore;
 using AsyncSocketServer;
+using Common;
+using GameCommon;
 
 namespace NETUploadClient.SyncSocketProtocolCore
 {
@@ -84,6 +86,37 @@ namespace NETUploadClient.SyncSocketProtocolCore
                 //记录日志
                 m_errorString = E.Message;
                 return false;
+            }
+        }
+        /// <summary>
+        /// 发送一个json对象
+        /// </summary>
+        /// <param name="name">命令</param>
+        /// <param name="data">数据</param>
+        /// <returns></returns>
+        public bool SendJson(string name, object data)
+        {
+            return SendCommand(name, new Parameter[] {
+                new Parameter("data",data.ToJson())
+            });
+        }
+        /// <summary>
+        /// 发送一个json对象
+        /// </summary>
+        /// <param name="name">命令</param>
+        /// <param name="data">数据</param>
+        /// <returns></returns>
+        public bool SendJson(string name, Parameter[] data)
+        {
+            if (data == null)
+            {
+                return SendCommand(name, null);
+            }
+            else
+            {
+                return SendCommand(name, new Parameter[] {
+                new Parameter("data",data.ToJson())
+            });
             }
         }
         public bool DoLogin(string userName, string password)

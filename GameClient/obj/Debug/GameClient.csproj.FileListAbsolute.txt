@@ -9,3 +9,5 @@ E:\myproject\麻将窝\GameServer\GameClient\obj\Debug\GameClient.pdb
 E:\myproject\麻将窝\GameServer\GameClient\bin\Debug\LitJson.dll
 E:\myproject\麻将窝\GameServer\GameClient\bin\Debug\Common.dll
 E:\myproject\麻将窝\GameServer\GameClient\bin\Debug\Common.pdb
+E:\myproject\麻将窝\GameServer\GameClient\bin\Debug\Mahjong.dll
+E:\myproject\麻将窝\GameServer\GameClient\bin\Debug\Mahjong.pdb

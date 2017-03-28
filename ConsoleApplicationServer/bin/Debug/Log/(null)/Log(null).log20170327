@@ -1,0 +1,321 @@
+2017-03-27 09:43:01,190 [8] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 09:43:08,053 [9] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:40489
+2017-03-27 09:43:08,106 [12] INFO : 用户连接信息:wang:5198a0e8-377b-4802-bf66-367848a226c6
+2017-03-27 09:43:08,133 [12] INFO : wang进入房间:100023
+2017-03-27 09:44:01,845 [11] INFO : Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:40489
+2017-03-27 09:44:04,877 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:40555
+2017-03-27 09:44:04,899 [12] INFO : 用户连接信息:wang:5198a0e8-377b-4802-bf66-367848a226c6
+2017-03-27 09:44:04,940 [12] INFO : wang进入房间:100023
+2017-03-27 09:44:04,995 [14] ERROR: IO_Completed System.Net.Sockets.Socket error, message: "现在已经正在使用此 SocketAsyncEventArgs 实例进行异步套接字操作。
+2017-03-27 09:44:05,039 [14] ERROR:    在 System.Net.Sockets.SocketAsyncEventArgs.StartConfiguring()
+   在 System.Net.Sockets.SocketAsyncEventArgs.SetBufferInternal(Byte[] buffer, Int32 offset, Int32 count)
+   在 AsyncSocketServer.AsyncSocketServer.SendAsyncEvent(Socket connectSocket, SocketAsyncEventArgs sendEventArgs, Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 253
+   在 AsyncSocketServer.AsyncSocketInvokeElement.SendCompleted() 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 113
+   在 AsyncSocketServer.AsyncSocketServer.ProcessSend(SocketAsyncEventArgs sendEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 241
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 147
+2017-03-27 09:45:03,065 [11] INFO : Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:40555
+2017-03-27 09:45:06,119 [14] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:40632
+2017-03-27 09:45:06,150 [15] INFO : 用户连接信息:wang:5198a0e8-377b-4802-bf66-367848a226c6
+2017-03-27 09:45:06,197 [15] INFO : wang进入房间:100023
+2017-03-27 09:45:06,217 [15] INFO : 房间游戏开始
+2017-03-27 09:45:11,791 [15] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 未实现该方法或操作。
+2017-03-27 09:45:11,815 [15] ERROR:    在 GameServer.Mahjong.BaseMahjong.GetCards() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 15
+   在 GameServer.Room.SendCard() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 91
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 84
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 59
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 70
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 32
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 94
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 71
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 185
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 09:57:08,328 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 09:57:18,393 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:41564
+2017-03-27 09:57:18,429 [13] INFO : 用户连接信息:zhang:ce1bb9ed-9712-4ff5-85a5-1331de6ccf67
+2017-03-27 09:57:18,457 [13] INFO : zhang进入房间:100023
+2017-03-27 09:58:09,382 [12] INFO : Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:41564
+2017-03-27 09:58:12,421 [13] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:41802
+2017-03-27 09:58:12,459 [3] INFO : 用户连接信息:zhang:ce1bb9ed-9712-4ff5-85a5-1331de6ccf67
+2017-03-27 09:58:12,495 [3] INFO : zhang进入房间:100023
+2017-03-27 09:58:12,547 [13] ERROR: IO_Completed System.Net.Sockets.Socket error, message: "现在已经正在使用此 SocketAsyncEventArgs 实例进行异步套接字操作。
+2017-03-27 09:58:12,572 [13] ERROR:    在 System.Net.Sockets.SocketAsyncEventArgs.StartConfiguring()
+   在 System.Net.Sockets.SocketAsyncEventArgs.SetBufferInternal(Byte[] buffer, Int32 offset, Int32 count)
+   在 AsyncSocketServer.AsyncSocketServer.SendAsyncEvent(Socket connectSocket, SocketAsyncEventArgs sendEventArgs, Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 253
+   在 AsyncSocketServer.AsyncSocketInvokeElement.SendCompleted() 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 113
+   在 AsyncSocketServer.AsyncSocketServer.ProcessSend(SocketAsyncEventArgs sendEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 241
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 147
+2017-03-27 09:59:10,529 [12] INFO : Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:41802
+2017-03-27 09:59:13,564 [13] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:41920
+2017-03-27 09:59:13,593 [8] INFO : 用户连接信息:zhang:ce1bb9ed-9712-4ff5-85a5-1331de6ccf67
+2017-03-27 09:59:13,627 [8] INFO : zhang进入房间:100023
+2017-03-27 09:59:13,648 [8] INFO : 房间游戏开始
+2017-03-27 09:59:13,692 [8] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 未实现该方法或操作。
+2017-03-27 09:59:13,716 [8] ERROR:    在 GameServer.Mahjong.BaseMahjong.GetCards() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 15
+   在 GameServer.Room.SendCard() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 91
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 84
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 59
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 70
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 32
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 94
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 71
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 185
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 10:00:12,025 [12] INFO : Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:41920
+2017-03-27 10:00:15,081 [8] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:42050
+2017-03-27 10:00:15,113 [16] INFO : 用户连接信息:zhang:ce1bb9ed-9712-4ff5-85a5-1331de6ccf67
+2017-03-27 10:00:15,173 [16] INFO : zhang进入房间:100023
+2017-03-27 10:00:15,197 [16] INFO : 房间游戏开始
+2017-03-27 10:00:15,239 [16] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 未实现该方法或操作。
+2017-03-27 10:00:15,271 [16] ERROR:    在 GameServer.Mahjong.BaseMahjong.GetCards() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 15
+   在 GameServer.Room.SendCard() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 91
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 84
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 59
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 70
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 32
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 94
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 71
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 185
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 10:01:12,970 [12] INFO : Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:42050
+2017-03-27 10:01:24,522 [16] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:42154
+2017-03-27 10:01:24,554 [18] INFO : 用户连接信息:zhang:ce1bb9ed-9712-4ff5-85a5-1331de6ccf67
+2017-03-27 10:01:24,578 [18] INFO : zhang进入房间:100023
+2017-03-27 10:01:24,603 [18] INFO : 房间游戏开始
+2017-03-27 10:01:24,646 [18] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 未实现该方法或操作。
+2017-03-27 10:01:24,675 [18] ERROR:    在 GameServer.Mahjong.BaseMahjong.GetCards() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 15
+   在 GameServer.Room.SendCard() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 91
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 84
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 59
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 70
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 32
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 94
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 71
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 185
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 10:02:37,036 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 10:02:42,579 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:42404
+2017-03-27 10:02:42,624 [13] INFO : 用户连接信息:ww:7eae4023-7a3e-41df-b6ea-00e5409a779f
+2017-03-27 10:02:42,647 [13] INFO : ww进入房间:100023
+2017-03-27 10:03:37,686 [12] INFO : Client connection disconnected. Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:42404
+2017-03-27 10:03:43,260 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:42480
+2017-03-27 10:05:18,393 [15] INFO : 用户连接信息:ww:7eae4023-7a3e-41df-b6ea-00e5409a779f
+2017-03-27 10:05:19,467 [15] INFO : ww进入房间:100023
+2017-03-27 10:07:04,630 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 10:07:12,450 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:42895
+2017-03-27 10:07:12,486 [6] INFO : 用户连接信息:www:88abea0c-3baf-4903-ad92-552b8698e7c7
+2017-03-27 10:07:12,514 [6] INFO : www进入房间:100023
+2017-03-27 10:08:50,871 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 10:08:51,641 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:43199
+2017-03-27 10:08:51,686 [14] INFO : 用户连接信息:wwww:b0c11f65-d8b0-4f05-9bf3-cc01744ccd87
+2017-03-27 10:08:51,712 [14] INFO : wwww进入房间:100023
+2017-03-27 10:12:44,108 [13] INFO : Client connection disconnected. 服务器主动关闭链接：Local Address: 127.0.0.1:9999 Remote Address: 127.0.0.1:43199
+2017-03-27 10:12:47,132 [15] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:43491
+2017-03-27 10:12:47,219 [3] INFO : 用户连接信息:wwww:b0c11f65-d8b0-4f05-9bf3-cc01744ccd87
+2017-03-27 10:12:47,272 [3] INFO : wwww进入房间:100023
+2017-03-27 10:12:47,419 [12] ERROR: IO_Completed System.Net.Sockets.Socket error, message: "现在已经正在使用此 SocketAsyncEventArgs 实例进行异步套接字操作。
+2017-03-27 10:12:47,464 [12] ERROR:    在 System.Net.Sockets.SocketAsyncEventArgs.StartConfiguring()
+   在 System.Net.Sockets.SocketAsyncEventArgs.SetBufferInternal(Byte[] buffer, Int32 offset, Int32 count)
+   在 AsyncSocketServer.AsyncSocketServer.SendAsyncEvent(Socket connectSocket, SocketAsyncEventArgs sendEventArgs, Byte[] buffer, Int32 offset, Int32 count)
+   在 AsyncSocketServer.AsyncSocketInvokeElement.SendCompleted()
+   在 AsyncSocketServer.AsyncSocketServer.ProcessSend(SocketAsyncEventArgs sendEventArgs)
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs)
+2017-03-27 10:13:21,530 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 10:13:31,441 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:43695
+2017-03-27 10:13:31,479 [14] INFO : 用户连接信息:www:1329a786-32b1-4713-86d9-1b5304dd7725
+2017-03-27 10:13:31,503 [14] INFO : www进入房间:100023
+2017-03-27 14:06:32,268 [14] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:50568
+2017-03-27 14:06:32,293 [12] INFO : 用户连接信息:dsss:5ab94ec7-53e1-4dc8-8969-d63447407e70
+2017-03-27 14:06:32,340 [12] INFO : dsss进入房间:100023
+2017-03-27 14:34:08,521 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 14:34:12,822 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:52537
+2017-03-27 14:34:12,867 [13] INFO : 用户连接信息:22:ce109f6a-ea64-4861-8eaa-f98c289fe8f9
+2017-03-27 14:34:12,894 [13] INFO : 22进入房间:100023
+2017-03-27 14:34:14,970 [13] INFO : 房间游戏开始
+2017-03-27 14:34:15,021 [13] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 未实现该方法或操作。
+2017-03-27 14:34:15,062 [13] ERROR:    在 GameServer.Mahjong.BaseMahjong.GetCards() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 15
+   在 GameServer.Room.SendCard() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 92
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 85
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 59
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 70
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 32
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 94
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 71
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 185
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 14:35:05,351 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 14:35:08,019 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:52765
+2017-03-27 14:35:08,060 [13] INFO : 用户连接信息:fff:539c51b0-a41e-4026-a2ef-95959c259b7e
+2017-03-27 14:35:08,086 [13] INFO : fff进入房间:100023
+2017-03-27 14:35:11,779 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:52771
+2017-03-27 14:35:11,820 [14] INFO : 用户连接信息:ssss:179ec380-4f32-44ee-86ee-dfe6c4bd1edc
+2017-03-27 14:35:11,843 [14] INFO : ssss进入房间:100023
+2017-03-27 14:35:11,864 [14] INFO : 房间游戏开始
+2017-03-27 14:35:11,903 [14] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 未实现该方法或操作。
+2017-03-27 14:35:11,930 [14] ERROR:    在 GameServer.Mahjong.BaseMahjong.GetCards() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 15
+   在 GameServer.Room.SendCard() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 93
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 86
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 59
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 70
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 32
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 94
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 71
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 185
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 14:44:42,457 [8] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 14:44:45,069 [9] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:53536
+2017-03-27 14:44:45,119 [12] INFO : 用户连接信息:ggg:2bd3c45e-8e6e-44f0-b231-d9dc048d9c1e
+2017-03-27 14:44:45,144 [12] INFO : ggg进入房间:100023
+2017-03-27 14:44:46,577 [12] WARN : 非法连接并关闭连接. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:53536
+2017-03-27 14:44:46,625 [12] INFO : Client connection disconnected. 服务器主动关闭链接：Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:53536
+2017-03-27 14:52:24,166 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 14:52:27,505 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:54151
+2017-03-27 14:52:27,553 [13] INFO : 用户连接信息:sss:839000fc-1f76-4338-99e6-7c52ae96dfe3
+2017-03-27 14:52:27,578 [13] INFO : sss进入房间:100023
+2017-03-27 14:52:29,703 [10] WARN : 非法连接并关闭连接. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:54151
+2017-03-27 14:52:29,757 [10] INFO : Client connection disconnected. 服务器主动关闭链接：Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:54151
+2017-03-27 14:52:43,325 [10] ERROR: IO_Completed  error, message: 未将对象引用设置到对象的实例。
+2017-03-27 14:52:43,357 [10] ERROR:    在 GameServer.Room.RemovePlayer(String token) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 79
+   在 GameServer.GameSocketProtocol.Close() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 65
+   在 AsyncSocketServer.AsyncSocketUserToken.set_ConnectSocket(Socket value) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketUserToken.cs:行号 38
+   在 AsyncSocketServer.AsyncSocketServer.CloseClientSocket(AsyncSocketUserToken userToken) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 279
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 208
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 14:53:08,005 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 14:53:08,301 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:54276
+2017-03-27 14:53:08,377 [14] INFO : 用户连接信息:ffff:33a2b1b5-6a4b-4502-a28b-b2f8f5d773d3
+2017-03-27 14:53:08,425 [14] INFO : ffff进入房间:100023
+2017-03-27 14:53:19,194 [11] WARN : 非法连接并关闭连接. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:54276
+2017-03-27 14:53:19,241 [11] INFO : Client connection disconnected. 服务器主动关闭链接：Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:54276
+2017-03-27 14:53:45,786 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 14:53:48,955 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:54435
+2017-03-27 14:53:49,002 [14] INFO : 用户连接信息:ffff:28a62fb4-9553-41ca-8f06-6728dd91d28a
+2017-03-27 14:53:49,027 [14] INFO : ffff进入房间:100023
+2017-03-27 14:53:53,954 [14] WARN : 非法连接并关闭连接. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:54435
+2017-03-27 14:53:53,988 [14] INFO : Client connection disconnected. 服务器主动关闭链接：Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:54435
+2017-03-27 14:54:25,022 [14] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:54470
+2017-03-27 14:54:25,054 [12] INFO : 用户连接信息:dddd:80df57d9-0f14-4d66-8a8f-1bf0476f9534
+2017-03-27 14:54:25,089 [12] INFO : dddd进入房间:100023
+2017-03-27 14:54:26,666 [14] WARN : 非法连接并关闭连接. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:54470
+2017-03-27 14:54:26,719 [14] INFO : Client connection disconnected. 服务器主动关闭链接：Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:54470
+2017-03-27 14:55:44,980 [14] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:54562
+2017-03-27 14:55:45,011 [16] INFO : 用户连接信息:sssss:57f9440c-ecde-4c3d-bdb5-2b28288489ff
+2017-03-27 14:55:45,037 [16] INFO : sssss进入房间:100023
+2017-03-27 14:55:51,317 [16] WARN : 与客户端链接断开. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:54562
+2017-03-27 14:55:51,363 [16] INFO : Client connection disconnected. Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:54562
+2017-03-27 14:57:48,314 [16] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:54700
+2017-03-27 14:57:48,345 [18] INFO : 用户连接信息:sss:3d73337b-74ab-4d3e-a10d-707ae20b014e
+2017-03-27 14:57:48,398 [18] INFO : sss进入房间:100023
+2017-03-27 14:57:51,195 [16] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:54705
+2017-03-27 14:57:51,220 [19] INFO : 用户连接信息:fff:55a0d57f-0b95-487c-8e1c-4b39600119a8
+2017-03-27 14:57:51,243 [19] INFO : fff进入房间:100023
+2017-03-27 14:57:51,272 [19] INFO : 房间100023游戏开始
+2017-03-27 14:57:51,320 [19] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 未实现该方法或操作。
+2017-03-27 14:57:51,349 [19] ERROR:    在 GameServer.Mahjong.BaseMahjong.GetCards() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 15
+   在 GameServer.Room.SendCard() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 103
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 96
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 60
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 75
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 36
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count)
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count)
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs)
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs)
+2017-03-27 16:37:16,084 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 16:37:18,908 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:62941
+2017-03-27 16:37:18,956 [13] INFO : 用户连接信息:ss:a95479d7-aacf-40f1-b76d-6babefce4fa2
+2017-03-27 16:37:18,982 [13] INFO : ss进入房间:100023
+2017-03-27 16:37:23,503 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:62946
+2017-03-27 16:37:23,540 [14] INFO : 用户连接信息:ffff:2d0c590d-4f42-4621-9eaf-dc916014f7f3
+2017-03-27 16:37:23,562 [14] INFO : ffff进入房间:100023
+2017-03-27 16:37:23,594 [14] INFO : 房间100023游戏开始
+2017-03-27 16:37:33,253 [14] ERROR: IO_Completed System.Net.Sockets.Socket error, message: 目标数组的长度不够。请检查 destIndex 和长度以及数组的下限。
+2017-03-27 16:37:33,498 [14] ERROR:    在 System.Array.Copy(Array sourceArray, Int32 sourceIndex, Array destinationArray, Int32 destinationIndex, Int32 length, Boolean reliable)
+   在 System.Collections.Generic.List`1.CopyTo(T[] array)
+   在 GameServer.Mahjong.BaseMahjong.GetCards(Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Mahjong\BaseMahjong.cs:行号 70
+   在 GameServer.MahjongRoom.GameStart() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\MahjongRoom.cs:行号 35
+   在 GameServer.Room.Start() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 95
+   在 GameServer.Room.Login(Player player) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\Room.cs:行号 59
+   在 GameServer.GameSocketProtocol.DoLoginRoom() 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 75
+   在 GameServer.GameSocketProtocol.ProcessCommand(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\UserIOCPServer\GameSocketProtocol.cs:行号 36
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessPacket(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 94
+   在 AsyncSocketServer.AsyncSocketInvokeElement.ProcessReceive(Byte[] buffer, Int32 offset, Int32 count) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketInvokeElement.cs:行号 71
+   在 AsyncSocketServer.AsyncSocketServer.ProcessReceive(SocketAsyncEventArgs receiveEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 185
+   在 AsyncSocketServer.AsyncSocketServer.IO_Completed(Object sender, SocketAsyncEventArgs asyncEventArgs) 位置 E:\myproject\麻将窝\GameServer\TCP\NETIOCPSvr\AsyncSocketCore\AsyncSocketServer.cs:行号 145
+2017-03-27 16:37:45,602 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:62973
+2017-03-27 16:37:45,626 [14] INFO : 用户连接信息:ggg:4b0395b9-edc6-4a47-8cd1-c39a80c51210
+2017-03-27 16:37:45,649 [14] INFO : ggg进入房间:100023
+2017-03-27 16:38:14,952 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 16:38:21,192 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63102
+2017-03-27 16:38:21,239 [13] INFO : 用户连接信息:dd:543550ad-65ae-4a46-b09d-b4904bd3cbce
+2017-03-27 16:38:21,263 [13] INFO : dd进入房间:100023
+2017-03-27 16:38:23,973 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63105
+2017-03-27 16:38:24,001 [14] INFO : 用户连接信息:sss:4d3d1218-49f0-4e3a-bcbf-f7512e649f84
+2017-03-27 16:38:24,022 [14] INFO : sss进入房间:100023
+2017-03-27 16:38:24,048 [14] INFO : 房间100023游戏开始
+2017-03-27 16:39:29,028 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 16:39:32,214 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63271
+2017-03-27 16:39:32,258 [13] INFO : 用户连接信息:dd:39437f95-6199-44c6-a155-f5bd7d5f8381
+2017-03-27 16:39:32,282 [13] INFO : dd进入房间:100023
+2017-03-27 16:39:34,855 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63275
+2017-03-27 16:39:34,882 [14] INFO : 用户连接信息:sss:73aeb47e-cdc4-443d-bbd6-74ae111db53a
+2017-03-27 16:39:34,904 [14] INFO : sss进入房间:100023
+2017-03-27 16:39:34,923 [14] INFO : 房间100023游戏开始
+2017-03-27 16:39:48,145 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 16:39:52,646 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63384
+2017-03-27 16:39:52,694 [14] INFO : 用户连接信息:ggg:89e5a5b7-73f8-45ca-97ef-6609a51197c3
+2017-03-27 16:39:52,721 [14] INFO : ggg进入房间:100023
+2017-03-27 16:39:56,241 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63388
+2017-03-27 16:39:56,263 [14] INFO : 用户连接信息:xxx:e024c615-c040-490f-a4f2-4cf901aa8a64
+2017-03-27 16:39:56,288 [14] INFO : xxx进入房间:100023
+2017-03-27 16:39:56,323 [14] INFO : 房间100023游戏开始
+2017-03-27 16:41:07,896 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 16:41:16,751 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63592
+2017-03-27 16:41:16,797 [13] INFO : 用户连接信息:hh:426fd9bf-bd96-4dfc-8e1c-dfa3aabacdc8
+2017-03-27 16:41:16,824 [13] INFO : hh进入房间:100023
+2017-03-27 16:41:19,701 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:63595
+2017-03-27 16:41:19,730 [14] INFO : 用户连接信息:dd:65f0cfff-9595-4815-aa5b-e349d3b092f5
+2017-03-27 16:41:19,754 [14] INFO : dd进入房间:100023
+2017-03-27 16:41:19,775 [14] INFO : 房间100023游戏开始
+2017-03-27 17:06:38,796 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 17:09:20,791 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 17:09:31,197 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:1152
+2017-03-27 17:09:31,236 [13] INFO : 用户连接信息:ddd:528e2c83-ee82-4beb-80a3-9c0f6dc74722
+2017-03-27 17:09:31,260 [13] INFO : ddd进入房间:100023
+2017-03-27 17:09:43,681 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:1165
+2017-03-27 17:09:43,711 [13] INFO : 用户连接信息:sss:d7f879cf-1f65-4812-b9ec-b8ed68c54862
+2017-03-27 17:09:43,734 [13] INFO : sss进入房间:100023
+2017-03-27 17:09:43,759 [13] INFO : 房间100023游戏开始
+2017-03-27 17:18:27,608 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 17:18:29,959 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:2315
+2017-03-27 17:18:30,005 [13] INFO : 用户连接信息:dd:3d836eec-a6e7-4a10-8a18-05bdd0814cf0
+2017-03-27 17:18:30,034 [13] INFO : dd进入房间:100023
+2017-03-27 17:18:34,039 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:2320
+2017-03-27 17:18:34,069 [13] INFO : 用户连接信息:sss:79e3b306-fb03-4e61-9557-eddb8c131ca5
+2017-03-27 17:18:34,091 [13] INFO : sss进入房间:100023
+2017-03-27 17:18:34,112 [13] INFO : 房间100023游戏开始
+2017-03-27 17:45:04,255 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 17:45:27,364 [11] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:4368
+2017-03-27 17:45:27,400 [12] INFO : 用户连接信息:sssss:53ca940f-f386-4b06-a90c-94b34348a3a5
+2017-03-27 17:45:27,424 [12] INFO : sssss进入房间:100023
+2017-03-27 17:47:35,154 [12] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:4487
+2017-03-27 17:47:35,180 [6] INFO : 用户连接信息:ssss:18dd7f93-399b-4e90-b870-360dcf833c4e
+2017-03-27 17:47:35,226 [6] INFO : ssss进入房间:100023
+2017-03-27 17:47:35,252 [6] INFO : 房间100023游戏开始
+2017-03-27 17:50:00,853 [15] WARN : 与客户端链接断开. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:4368
+2017-03-27 17:50:00,893 [15] INFO : Client connection disconnected. Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:4368
+2017-03-27 17:55:14,631 [10] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 17:56:33,855 [9] INFO : Start listen socket 0.0.0.0:9999 success
+2017-03-27 17:56:35,374 [10] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:5349
+2017-03-27 17:56:35,415 [13] INFO : 用户连接信息:zsss:0e46b099-9a71-4b4f-bf13-b9dfdccf3a5e
+2017-03-27 17:56:35,440 [13] INFO : zsss进入房间:100023
+2017-03-27 17:56:52,542 [14] WARN : 与客户端链接断开. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:5349
+2017-03-27 17:56:52,579 [14] INFO : Client connection disconnected. Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:5349
+2017-03-27 17:57:22,131 [15] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:5470
+2017-03-27 17:57:22,150 [14] INFO : 用户连接信息:ffff:aeffb5d3-ef76-4c44-988d-a9a60becda16
+2017-03-27 17:57:22,177 [14] INFO : ffff进入房间:100023
+2017-03-27 17:57:42,459 [15] INFO : Client connection accepted. Local Address: 127.0.0.1:9999, Remote Address: 127.0.0.1:5488
+2017-03-27 17:57:42,484 [11] INFO : 用户连接信息:ssaf:85a3e914-a208-4dbe-97fc-8f26e692adfc
+2017-03-27 17:57:42,512 [11] INFO : ssaf进入房间:100023
+2017-03-27 17:57:42,532 [11] INFO : 房间100023游戏开始
+2017-03-27 18:04:29,358 [15] WARN : 与客户端链接断开. Local Address: 0.0.0.0:9999, Remote Address: 127.0.0.1:5470
+2017-03-27 18:04:29,390 [15] INFO : Client connection disconnected. Local Address: 0.0.0.0:9999 Remote Address: 127.0.0.1:5470
