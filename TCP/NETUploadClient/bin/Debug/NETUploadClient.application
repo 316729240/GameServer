@@ -4,14 +4,14 @@
   <description asmv2:publisher="Microsoft" asmv2:product="NETUploadClient" xmlns="urn:schemas-microsoft-com:asm.v1" />
   <deployment install="true" mapFileExtensions="true" />
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="NETUploadClient.exe.manifest" size="6485">
+    <dependentAssembly dependencyType="install" codebase="NETUploadClient.exe.manifest" size="6493">
       <assemblyIdentity name="NETUploadClient.exe" version="1.0.0.0" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>yRhPKZSxx2/pEa0FTk1xiQLfEak=</dsig:DigestValue>
+        <dsig:DigestValue>ih/N57rVra9FAczEgQTGPlMekac=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

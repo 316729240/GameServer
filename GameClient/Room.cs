@@ -7,13 +7,13 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Threading;
-
 namespace GameClient
 {
     public abstract class Room : ClientBaseSocket
     {
         internal Player Player = null;//当前玩家
         Player[] PlayerList = null;//房间中的玩家 
+        internal DataProvider DataProvider = new DataProvider();
         /// <summary>
         /// 房间状态 
         /// </summary>
@@ -22,9 +22,10 @@ namespace GameClient
         /// 房间id
         /// </summary>
         public string RoomId { get; set; }
-        public Room(string serverIP,Player player,string roomId,Dictionary<string,object> config)
+        public Room(string serverIP,Player player,string roomId, DataProvider dataProvider)
         {
-            PlayerList = new Player[config["playerCount"].ToInt()];
+            DataProvider = dataProvider;
+            PlayerList = new Player[DataProvider.Get("playerCount").ToInt()];
             Player = player;
             this.RoomId = roomId;
             m_protocolFlag = AsyncSocketServer.ProtocolFlag.Upload;
@@ -66,7 +67,9 @@ namespace GameClient
                     {
                         PlayerList[index] = Player;
                         PlayerList[index].Hand = CreateHand();
-                    }else
+                        DataProvider.Set("Player",Player);
+                    }
+                    else
                     {
                         PlayerList[index] = new Player
                         {
@@ -118,7 +121,7 @@ namespace GameClient
             else if(comm.Command== "SendCard")//收到新牌
             {
                 Player.Hand.AddCards(data.ToIntArr());//加入至手牌中
-                ReceivedCard(data);
+                ReceivedCard(data.ToIntArr());
             }
             else if(comm.Command== "RadioSendCard")//其他玩家获取手牌信息
             {
@@ -129,8 +132,10 @@ namespace GameClient
             else if (comm.Command == "RadioPlayerPlay")//其他玩家出牌信息
             {
                 int index = data["index"].ValueAsInt();
-                LitJson.JsonData cards = data["cards"];
-                int[] operation = CheckPlay(PlayerList[index], data);
+                int [] cards = data["cards"].ToIntArr();
+                DataProvider.Set("PlayerPlayCards", cards);
+                DataProvider.Set("NowPlayPlayer", PlayerList[index]);
+                int[] operation = CheckPlay(PlayerList[index], cards);
                 ResponsePlayerPlay(comm.GetInt("sendNo"), operation);
             }
             else if (comm.Command == "SetPlayerPlay")//设置当前用户可以出牌
@@ -143,7 +148,7 @@ namespace GameClient
         /// </summary>
         /// <param name="player"></param>
         /// <param name="cards"></param>
-        public abstract int[] CheckPlay(Player player, JsonData cards);
+        public abstract int[] CheckPlay(Player player, int [] cards);
         /// <summary>
         /// 玩家出牌
         /// </summary>
@@ -161,7 +166,7 @@ namespace GameClient
         /// 获得新牌
         /// </summary>
         /// <param name="data"></param>
-        public abstract void ReceivedCard(JsonData data);
+        public abstract void ReceivedCard(int [] data);
         /// <summary>
         /// 创建手牌对象
         /// </summary>

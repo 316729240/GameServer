@@ -28,6 +28,6 @@ E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\GameServer.dll
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Mahjong.dll
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Mahjong.pdb
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\GameServer.pdb
-E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Common.dll
 E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\LitJson.dll
-E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\Common.pdb
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\GameCommon.dll
+E:\myproject\麻将窝\GameServer\tcpserver\bin\Debug\GameCommon.pdb

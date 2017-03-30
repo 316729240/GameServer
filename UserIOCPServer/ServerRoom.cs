@@ -13,7 +13,7 @@ namespace GameServer
     /// <summary>
     /// 基础游戏房间模型 
     /// </summary>
-    public abstract class Room
+    public abstract class ServerRoom
     {
         int NowCount = 0;//当前人数
         /// <summary>
@@ -35,7 +35,7 @@ namespace GameServer
         /// </summary>
         /// <param name="prop">游戏道具</param>
         /// <param name="max">最大人数</param>
-        public Room(string roomId, int max)
+        public ServerRoom(string roomId, int max)
         {
             RoomId = roomId;
             //房间人数

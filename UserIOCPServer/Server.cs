@@ -14,7 +14,7 @@ namespace GameServer
     {
 
         public Dictionary<string,BaseSocketProtocol> Users = new Dictionary<string,BaseSocketProtocol>();//建立链接用户
-        public Dictionary<string, Room> Rooms = new Dictionary<string, Room>();
+        public Dictionary<string, ServerRoom> Rooms = new Dictionary<string, ServerRoom>();
         public Server(int numConnections): base(numConnections)
         {
             //this.SocketTimeOutMS = socketTimeOutMS;
@@ -46,9 +46,9 @@ namespace GameServer
         /// </summary>
         /// <param name="roomId"></param>
         /// <returns></returns>
-        public Room GetRoom(string roomId)
+        public ServerRoom GetRoom(string roomId)
         {
-            Room room = null;
+            ServerRoom room = null;
             if (Rooms.ContainsKey(roomId))
             {
                 room = Rooms[roomId];

@@ -12,7 +12,7 @@ namespace GameServer
     /// <summary>
     /// 麻将游戏房间模型 
     /// </summary>
-    public class MahjongRoom:Room
+    public class MahjongRoom:ServerRoom
     {
         /// <summary>
         /// 房间

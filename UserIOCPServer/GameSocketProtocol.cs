@@ -21,7 +21,7 @@ namespace GameServer
         /// <summary>
         /// 当前玩家所在房间
         /// </summary>
-        Room GameRoom = null;
+        ServerRoom GameRoom = null;
         //HashSet<BaseSocketProtocol> loginUser = new HashSet<BaseSocketProtocol>();//建立链接用户
         public GameSocketProtocol(Server asyncSocketServer, AsyncSocketUserToken asyncSocketUserToken)
             : base(asyncSocketServer, asyncSocketUserToken)

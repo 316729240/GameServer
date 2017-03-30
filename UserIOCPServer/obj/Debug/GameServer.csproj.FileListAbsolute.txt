@@ -6,8 +6,8 @@ E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\log4net.dll
 E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\SocketAsyncSvr.pdb
 E:\myproject\麻将窝\GameServer\UserIOCPServer\obj\Debug\GameServer.dll
 E:\myproject\麻将窝\GameServer\UserIOCPServer\obj\Debug\GameServer.pdb
-E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\Common.dll
 E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\LitJson.dll
-E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\Common.pdb
 E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\Mahjong.dll
 E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\Mahjong.pdb
+E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\GameCommon.dll
+E:\myproject\麻将窝\GameServer\UserIOCPServer\bin\Debug\GameCommon.pdb

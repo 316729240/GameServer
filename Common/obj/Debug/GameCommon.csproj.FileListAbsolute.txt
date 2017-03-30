@@ -1,5 +1,6 @@
-E:\myproject\麻将窝\GameServer\Common\bin\Debug\Common.dll
-E:\myproject\麻将窝\GameServer\Common\bin\Debug\Common.pdb
 E:\myproject\麻将窝\GameServer\Common\bin\Debug\LitJson.dll
-E:\myproject\麻将窝\GameServer\Common\obj\Debug\Common.dll
-E:\myproject\麻将窝\GameServer\Common\obj\Debug\Common.pdb
+E:\myproject\麻将窝\GameServer\Common\bin\Debug\GameCommon.dll
+E:\myproject\麻将窝\GameServer\Common\bin\Debug\GameCommon.pdb
+E:\myproject\麻将窝\GameServer\Common\obj\Debug\GameCommon.dll
+E:\myproject\麻将窝\GameServer\Common\obj\Debug\GameCommon.pdb
+E:\myproject\麻将窝\GameServer\Common\obj\Debug\GameCommon.csprojResolveAssemblyReference.cache
